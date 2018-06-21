@@ -11,30 +11,17 @@ import {
   Text,
   View
 } from 'react-native';
-import UserProfile from 'UserProfile';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu bla bla',
-});
+import UserProfile, { User } from './src/UserProfile';
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
+    const user = { title: "Yossi Rizgan", icon: "https://media.licdn.com/dms/image/C4D03AQFIKDRr1Hegew/profile-displayphoto-shrink_200_200/0?e=1534377600&v=beta&t=Vp2c20_6fqQMIsH1aZsVJcCZFrKD5qOUP7RYBKOPBvY" };
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-        <UserProfile value={user = { title="Yossi Rizgan" }} />
+        <UserProfile
+          user={user}
+        />
       </View>
     );
   }

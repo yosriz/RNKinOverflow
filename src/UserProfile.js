@@ -25,15 +25,15 @@ export default class UserProfile extends PureComponent<Props>{
     props: Props;
 
     render() {
-        const { user } = this.props.user;
+        const user = this.props.user;
         return (
             <View>
-                <Text >{this.props.user.title}</Text>
+                <Text >{user.title}</Text>
                 {<Image
-                    style={[                        
+                    style={[
                         { width: 300, height: 200, marginTop: 10 },
                     ]}
-                    source={{ uri: this.props.user.icon }}
+                    source={{ uri: user.icon }}
                 />}
             </View>
         );

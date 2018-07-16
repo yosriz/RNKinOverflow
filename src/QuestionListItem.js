@@ -34,21 +34,21 @@ export default class QuestionListItem extends PureComponent<Props>{
                                 {question.up_vote_count}</Text>
                         </View>
                     </View>
-                    <Text style={{ marginLeft: 5, marginBottom: 2, marginTop: 2, color: colors.primary, width: '85%' }}>{question.title}</Text>
+                    <Text style={{ paddingStart : 5, paddingEnd : 5, paddingBottom: 2, paddingTop: 2, color: colors.primary, width: '85%' }}>{question.title}</Text>
                 </View>
                 <View style={[styles.horizontal, { marginTop: 2 }]}>
                     <View style={{ width: '15%', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                        <Text style={{ color: colors.primary, marginRight: 4 }}>
-                            323</Text>
+                        <Text style={{ color: colors.primary, paddingEnd: 2 }}>
+                            3</Text>
                         <Image style={{ width: 12, height: 12 }}
                             source={require('../kin-icon.png')} />
                     </View>
-                    <Text style={{ marginLeft: 5, color: "#adadad", width: '85%', alignSelf: 'center' }}>
+                    <Text style={{ paddingStart: 5, color: "#adadad", flexGrow : 1, alignSelf: 'center' }}>
                         {question.tags.reduce((prevVal, currVal, index, array) => {
                             return prevVal + ', ' + currVal
                         })}
                     </Text>
-                    <Text style={{ marginRight: 5, color: "#adadad" }}>
+                    <Text style={{ paddingRight: 5, color: "#adadad", alignSelf: 'center' }}>
                         22 Hours Ago
                     </Text>
                 </View>

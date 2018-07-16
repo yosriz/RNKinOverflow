@@ -34,22 +34,21 @@ export default class QuestionListItem extends PureComponent<Props>{
                                 {question.up_vote_count}</Text>
                         </View>
                     </View>
-                    <Text style={{ marginLeft: 5, marginBottom: 2, marginTop: 2, color: colors.primary, width: '90%' }}>{question.title}</Text>
+                    <Text style={{ marginLeft: 5, marginBottom: 2, marginTop: 2, color: colors.primary, width: '85%' }}>{question.title}</Text>
                 </View>
-                <View style={styles.horizontal}>
-                    <View style={{ width: '15%', alignSelf: 'center', alignItems: 'center', flexDirection: 'row' }}>
-                        <Text style={{ color: colors.primary, marginLeft : 10, marginRight : 2 }}>
+                <View style={[styles.horizontal, { marginTop: 2 }]}>
+                    <View style={{ width: '15%', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                        <Text style={{ color: colors.primary, marginRight: 4 }}>
                             323</Text>
-                        <Image style={{ width : 12, height : 12}}
-                            source={require('../kin-icon.png')}
-                        />
+                        <Image style={{ width: 12, height: 12 }}
+                            source={require('../kin-icon.png')} />
                     </View>
-                    <Text style={{ marginLeft: 5, marginBottom: 2, marginTop: 2, color: "#adadad", flexGrow: 1 }}>
+                    <Text style={{ marginLeft: 5, color: "#adadad", width: '85%', alignSelf: 'center' }}>
                         {question.tags.reduce((prevVal, currVal, index, array) => {
                             return prevVal + ', ' + currVal
                         })}
                     </Text>
-                    <Text style={{ marginRight: 5, marginBottom: 2, marginTop: 2, color: "#adadad" }}>
+                    <Text style={{ marginRight: 5, color: "#adadad" }}>
                         22 Hours Ago
                     </Text>
                 </View>

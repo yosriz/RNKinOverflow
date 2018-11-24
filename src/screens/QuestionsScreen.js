@@ -48,6 +48,9 @@ export class QuestionsScreen extends React.Component {
           <FlatList
             data={this.state.questions}
             renderItem={({ item }) => <QuestionListItem question={item} />}
+            ItemSeparatorComponent={(highlighted) => (
+              <View style={{ borderBottomColor: colors.primary, borderBottomWidth: 1, marginBottom: 5, marginTop: 5 }} />
+            )}
           />
         </View>
       );

@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { Question } from './models/Question'
 import { colors } from './Colors'
+import moment from 'moment'
 
 
 type Props = {
@@ -36,7 +37,7 @@ export default class QuestionListItem extends PureComponent<Props>{
                     </View>
                     <Text style={{ paddingStart: 5, paddingEnd: 5, paddingBottom: 2, paddingTop: 2, color: colors.primary, width: '85%' }}>{question.title}</Text>
                 </View>
-                <View style={[styles.horizontal, { marginTop: 2 }]}>
+                <View style={[styles.horizontal, { marginTop: 2, width: '100%' }]}>
                     <View style={{ width: '15%', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                         <View style={{
                             justifyContent: 'center', alignItems: 'center',
@@ -46,19 +47,19 @@ export default class QuestionListItem extends PureComponent<Props>{
                             borderRadius: 3,
                             width: '60%'
                         }} >
-                            <Text style={{ color: colors.primary, paddingEnd: 2, alignSelf:'center' }}>
+                            <Text style={{ color: colors.primary, paddingEnd: 2, alignSelf: 'center' }}>
                                 30</Text>
                             <Image style={{ width: 10, height: 10, alignSelf: 'center' }}
                                 source={require('../kin-icon.png')} />
                         </View>
                     </View>
-                    <Text style={{ paddingStart: 5, color: "#adadad", flexGrow: 1, alignSelf: 'center' }}>
+                    <Text style={{ paddingStart: 5, color: "#adadad", width : '60%', alignSelf: 'center' }}>
                         {question.tags.reduce((prevVal, currVal, index, array) => {
                             return prevVal + ', ' + currVal
                         })}
                     </Text>
-                    <Text style={{ paddingRight: 5, color: "#adadad", alignSelf: 'center' }}>
-                        22 Hours Ago
+                    <Text style={{ paddingRight: 5, color: "#adadad", alignSelf: 'center', justifyContent : 'flex-end' }}>
+                        {moment.unix(question.creation_date).fromNow()}
                     </Text>
                 </View>
             </View >
